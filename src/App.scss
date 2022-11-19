@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+.app {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.rain-drop{
+  text-align: center;
+  min-width: 1em;
+  -webkit-mask-image: linear-gradient(#0000 40%, #fff);
+  -webkit-mask-size: 100% 50%;
+}
+
+.glyph{
+  line-height: 1em;
+  color: #69f767;
+  font-weight: 400;
+  /* text-shadow: 1px 1px 2px #ffffff; */
+
+}
+
+@keyframes raining {
+  from {
+    -webkit-mask-position: 0% 0%;
+  }
+  to {
+    -webkit-mask-position: 200% 200%;
+  }
+}
+
+.options-menu-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  left: 3px;
+  bottom: 3px;
+  background: transparent;
+  border: 1px solid #69f767;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  color: #000;
+  line-height: 50px;
+  transition: box-shadow .15s, text-shadow .15s, border .15s, width 1s, height 1s, left 1s, bottom 1s;
+  text-shadow: 0px 0px 2px #ffffff, 0px 0px 4px #ffffff, 0px 0px 8px #ffffff, 0px 0px 16px #ffffff, 0px 0px 32px #ffffff, 0px 0px 64px #ffffff;
+  
+  label {
+    display: block;
+  }
+
+  .label {
+    opacity: 1;
+    height: 50px;
+    transition: opacity 1s, height 1s;
+  }
+
+  .inputs {
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 5;
+
+    input {
+      margin-left: 5px;
+    }
+  }
+
+  &:hover {
+    left: 3px;
+    bottom: 3px;
+    box-shadow: 0px 0px 4px #ffffff, inset 0px 0px 2px #ffffff;
+    border: 1px solid #69f767;
+    color: #69f767;
+
+    .inputs {
+      color:#000;
+    }    
+  }
+
+  &.open{
+    width: 450px;
+    height: 215px;
+    
+    .inputs {
+      color:#000;
+      opacity: 1;
+    }
+  }
+}

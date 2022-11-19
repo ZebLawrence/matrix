@@ -1,0 +1,13 @@
+$columns: 40;
+$column-size: 20;
+
+@mixin raindrop-x {
+  $col-list: null;
+  @for $i from 1 through $columns {
+    .raindrop-#{$i} {
+      animation: raining infinite linear;
+    }
+  }
+}
+
+@include raindrop-x;
