@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App {
   text-align: center;
 }
@@ -13,16 +22,18 @@
 .rain-drop{
   text-align: center;
   min-width: 1em;
+  width: 1em;
   -webkit-mask-image: linear-gradient(#0000 40%, #fff);
   -webkit-mask-size: 100% 50%;
-}
-
-.glyph{
   line-height: 1em;
-  color: #69f767;
+  color: #79ff89;
   font-weight: 400;
-  /* text-shadow: 1px 1px 2px #ffffff; */
+  animation: raining infinite linear;
 
+  &.shadow {
+    color: #00ff1f;
+    text-shadow: 2px 2px 0px #17009c, -1px 1px 0px #9c0000;
+  }
 }
 
 @keyframes raining {
@@ -85,8 +96,8 @@
   }
 
   &.open{
-    width: 450px;
-    height: 215px;
+    width: 400px;
+    height: 270px;
     
     .inputs {
       color:#000;
